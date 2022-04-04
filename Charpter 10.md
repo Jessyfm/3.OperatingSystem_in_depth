@@ -46,7 +46,7 @@ P()能够阻塞,V()不会阻塞
 1.  用二进制信号量实现的互斥
 
     ```cpp
-    mutex = new Semaphore(1);
+    mutex = new Semaphore(1);//确保互斥 初始化为1
     
     mutex->P();
     ...
@@ -56,7 +56,7 @@ P()能够阻塞,V()不会阻塞
 2.  用二进制信号量实现的调度约束
 
     ```cpp
-    condition = new Semaphore(0);
+    condition = new Semaphore(0);//同步 初始化为0
     
     //Thread A
     ...
